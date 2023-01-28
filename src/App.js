@@ -70,7 +70,7 @@ class App extends React.Component {
                     roles={[UserRole.Admin, UserRole.Editor]}
                   />
                   <Route
-                    path="/user"
+                    path="/usuarios"
                     render={(props) => <ViewUser {...props} />}
                   />
                   <Route

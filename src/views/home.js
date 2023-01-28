@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/no-array-index-key, react/no-danger */
 import React, { useState, useEffect, useRef } from 'react';
 import { Nav, NavItem, TabContent, TabPane } from 'reactstrap';
@@ -74,34 +76,22 @@ const slideItems = [
 
 const features = [
   {
-    title: 'Pleasant Design',
+    title: 'Gratuito',
     img: '/assets/img/landing-page/features/plesant-design.png',
     detail:
       'As a web developer we enjoy to work on something looks nice. It is not an absolute necessity but it really motivates us that final product will look good for user point of view. <br /><br />So we put a lot of work into colors, icons, composition and design harmony. Themed components and layouts with same design language. <br /><br />We kept user experience principles always at the heart of the design process.',
   },
   {
-    title: 'Extra Responsive',
+    title: 'Plan lite',
     img: '/assets/img/landing-page/features/extra-responsive.png',
     detail:
       'Xxs breakpoint is for smaller screens that has a resolution lower than 420px. Xs works between 576px and 420px. Xxl breakpoint is for larger screens that has a resolution higher than 1440px. Xl works between 1200px and 1440px.<br><br>With this approach we were able to create better experiences for smaller and larger screens.',
   },
   {
-    title: 'Superfine Charts',
+    title: 'Plan full',
     img: '/assets/img/landing-page/features/superfine-charts.png',
     detail:
       'Using charts is a good way to visualize data but they often look ugly and break the rhythm of design. <br /><br />We concentrated on a single chart library and tried to create charts that look good with color, opacity, border and shadow. <br /><br />Used certain plugins and created some to make charts even more useful and beautiful.',
-  },
-  {
-    title: 'Layouts for the Job',
-    img: '/assets/img/landing-page/features/layouts-for-the-job.png',
-    detail:
-      'Layouts are the real thing, they need to be accurate and right for the job. They should be functional for both user and developer. <br /><br />We created lots of different layouts for different jobs.<br /><br />Listing pages with view mode changing capabilities, shift select and select all functionality, application layouts with an additional menu, authentication and error layouts which has a different design than the other pages were our main focus. We also created details page with tabs that can hold many components.',
-  },
-  {
-    title: 'Smart Menu',
-    img: '/assets/img/landing-page/features/smart-menu.png',
-    detail:
-      'Instead of good old single panel menus with accordion structure that looks over complicated, we created 2 panels and categorized pages accordingly.<br><br>The default menu auto hides sub panel when resolution is under some breakpoint to open some space. You may also hide menu completely or use only main panel open only.',
   },
 ];
 
@@ -192,9 +182,8 @@ const Home = () => {
     homeSection.style.backgroundPositionX = `${homeRect.x - 580}px`;
 
     const footerSection = refSectionFooter.current;
-    footerSection.style.backgroundPositionX = `${
-      event.target.innerWidth - homeRect.x - 2000
-    }px`;
+    footerSection.style.backgroundPositionX = `${event.target.innerWidth - homeRect.x - 2000
+      }px`;
 
     if (event.target.innerWidth >= 992) {
       setShowMobileMenu(false);
@@ -260,7 +249,7 @@ const Home = () => {
               href="#scroll"
               onClick={(event) => scrollTo(event, 'features')}
             >
-              FEATURES
+              ¿Como funciona?
             </a>
           </li>
           <li className="nav-item">
@@ -269,7 +258,7 @@ const Home = () => {
               href="#scroll"
               onClick={(event) => scrollTo(event, 'layouts')}
             >
-              LAYOUTS
+              Precios
             </a>
           </li>
           <li className="nav-item">
@@ -278,25 +267,7 @@ const Home = () => {
               href="#scroll"
               onClick={(event) => scrollTo(event, 'components')}
             >
-              COMPONENTS
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="c-pointer"
-              href="#scroll"
-              onClick={(event) => scrollTo(event, 'apps')}
-            >
-              APPS
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="c-pointer"
-              href="#scroll"
-              onClick={(event) => scrollTo(event, 'themes')}
-            >
-              THEMES
+              Preguntas frecuentes
             </a>
           </li>
           <li className="nav-item">
@@ -309,7 +280,17 @@ const Home = () => {
               rel="noopener noreferrer"
               href={buyUrl}
             >
-              BUY
+              CREA TU TIENDA!
+            </a>
+          </li>
+          <li className="nav-item text-center">
+            <a
+              className="btn btn-outline-primary btn-sm mobile-menu-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={buyUrl}
+            >
+              ACCESO CLIENTES
             </a>
           </li>
         </ul>
@@ -334,7 +315,7 @@ const Home = () => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, 'features')}
                   >
-                    FEATURES
+                    ¿Como funciona?
                   </a>
                 </li>
                 <li className="nav-item">
@@ -343,7 +324,7 @@ const Home = () => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, 'layouts')}
                   >
-                    LAYOUTS
+                    Precios
                   </a>
                 </li>
                 <li className="nav-item">
@@ -352,25 +333,7 @@ const Home = () => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, 'components')}
                   >
-                    COMPONENTS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'apps')}
-                  >
-                    APPS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'themes')}
-                  >
-                    THEMES
+                    Preguntas frecuentes
                   </a>
                 </li>
                 <li className="nav-item pl-4">
@@ -380,7 +343,17 @@ const Home = () => {
                     rel="noopener noreferrer"
                     href={buyUrl}
                   >
-                    BUY
+                    CREA TU TIENDA!
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className="btn btn-outline-semi-light btn-sm pr-4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={buyUrl}
+                  >
+                    ACCESO CLIENTES
                   </a>
                 </li>
               </ul>
@@ -414,26 +387,22 @@ const Home = () => {
                 <div className="col-12 col-xl-4 col-lg-5 col-md-6">
                   <div className="home-text">
                     <div className="display-1">
-                      MAGIC IS IN <br />
-                      THE DETAILS
+                      VENDE ONLINE <br />
+                      <b
+                      >
+                        SIN COMISIONES
+                      </b>
+                      <br />
+                      <br />
+                      PLATAFORMA DE PAGO INTEGRADA
                     </div>
-                    <p className="white mb-5">
-                      Gogo is the combination of good design, quality code and
-                      attention for details.
-                      <br />
-                      <br />
-                      We used same design language for components, layouts, apps
-                      and other parts of the template. <br />
-                      <br />
-                      Hope you enjoy it!
-                    </p>
                     {/* eslint-disable-next-line react/jsx-no-target-blank */}
                     <a
                       className="btn btn-light btn-xl mr-2 mb-2"
                       href={adminRoot}
                       target="_blank"
                     >
-                      VIEW NOW <i className="simple-icon-arrow-right" />
+                      CREA TU TIENDA GRATIS <i className="simple-icon-arrow-right" />
                     </a>
                   </div>
                 </div>
@@ -447,32 +416,6 @@ const Home = () => {
                   </a>
                 </div>
               </div>
-
-              <div className="row">
-                <div className="col-12 p-0">
-                  <div className="home-carousel">
-                    <GlideComponent settings={slideSettings}>
-                      {slideItems.map((f, index) => (
-                        // eslint-disable-next-line react/no-array-index-key
-                        <div key={`slide_${index}`} className="card">
-                          <div className="card-body text-center">
-                            <div>
-                              <i className={`${f.icon} large-icon`} />
-                              <h5 className="mb-3 font-weight-semibold">
-                                {f.title}
-                              </h5>
-                            </div>
-                            <div>
-                              <p className="detail-text">{f.detail}</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </GlideComponent>
-                  </div>
-                </div>
-              </div>
-
               <div className="row">
                 <a
                   className="btn btn-circle btn-outline-semi-light hero-circle-button"
@@ -489,7 +432,7 @@ const Home = () => {
             <div className="container" id="features">
               <div className="row">
                 <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Features At a Glance</h1>
+                  <h1>Planes</h1>
                   <p>
                     We tried to create an admin theme that we would like to use
                     ourselves so we listed our priorities. We would like to have
@@ -541,184 +484,6 @@ const Home = () => {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="section background">
-            <div className="container" id="layouts">
-              <div className="row">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Structures &amp; Layouts</h1>
-                  <p>
-                    We did our best to create layouts for various needs that
-                    developers might have and best experience for users.
-                    <br />
-                    They are clean and slick. They function well and look good
-                    at the same time.
-                  </p>
-                </div>
-              </div>
-
-              <div className="row pt-5">
-                {layouts.map((l, index) => (
-                  <div
-                    key={`layout_${index}`}
-                    className="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-5"
-                  >
-                    <img
-                      className="img-fluid border-radius depth-2 mb-3 semi-rounded"
-                      alt={l.title}
-                      src={l.img}
-                    />
-                    <h4 className="text-center">{l.title}</h4>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="section mb-0">
-            <div className="container" id="components">
-              <div className="row mb-5">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Components</h1>
-                  <p>
-                    We used most popular and well managed open source components
-                    with bootstrap components. Combined them into even more
-                    useful ones. Themed them with same design principles and
-                    created a design harmony between components and layouts.
-                    <br />
-                    <br />
-                    From carousels to charts, switches to list we tried to
-                    provide components that we like to use on our development
-                    processes.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <img
-              className="components-image mb-5 pb-5"
-              alt="Components"
-              src="/assets/img/landing-page/components.jpg"
-            />
-          </div>
-
-          <div className="section background">
-            <div className="container" id="apps">
-              <div className="row">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center mb-4">
-                  <h1>Applications</h1>
-                  <p className="section-text">
-                    With the help of components and layouts, we created four
-                    different applications. They are a good way to get you
-                    started if you want to build something similar.
-                  </p>
-                </div>
-              </div>
-              <div className="row screenshots">
-                <div className="col-12 text-center mb-4">
-                  <Nav tabs className="justify-content-center">
-                    {applications.map((app, index) => (
-                      <NavItem key={`app_nav_${index}`}>
-                        <a
-                          href="#tab"
-                          className={classnames({
-                            'nav-link': true,
-                            active: activeTab === index,
-                          })}
-                          onClick={(event) => {
-                            event.preventDefault();
-                            toggle(index);
-                          }}
-                        >
-                          {app.title}
-                        </a>
-                      </NavItem>
-                    ))}
-                  </Nav>
-                  <TabContent activeTab={activeTab}>
-                    {applications.map((app, index) => (
-                      <TabPane key={`app_tab_${index}`} tabId={index}>
-                        <NavLink to={app.path}>
-                          <img
-                            alt={app.title}
-                            src={app.img}
-                            className="app-image"
-                          />
-                        </NavLink>
-                      </TabPane>
-                    ))}
-                  </TabContent>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="section mb-0">
-            <div className="container" id="themes">
-              <div className="row mb-5">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Themes</h1>
-                  <p>
-                    We carefully choosed colors and created 10 different themes
-                    with dark and light versions. You may also create your own
-                    themes easily since all the theme related styling is managed
-                    by Sass variables.
-                  </p>
-                </div>
-              </div>
-              {themes.map((t, index) => (
-                <div key={`theme_${index}`} className="row mb-5">
-                  <div className="col-12 text-center mb-3">
-                    <h4 className="text-center">{t.title}</h4>
-                  </div>
-                  <div className="col-12 col-md-6 col-lg-4 offset-lg-2 mb-3">
-                    <div className="depth-2 color-container">
-                      {['left', 'center', 'right'].map((align, i) => (
-                        <div
-                          key={`light_${index}_${i}`}
-                          className={`${t.class}-light-${i + 1} color-${align}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="col-12 col-md-6 col-lg-4 mb-3">
-                    <div className="depth-2 color-container">
-                      {['left', 'center', 'right'].map((align, i) => (
-                        <div
-                          key={`dark_${index}_${i}`}
-                          className={`${t.class}-dark-${i + 1} color-${align}`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="section background background-no-bottom mb-0 pb-0">
-            <div className="container">
-              <div className="row">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Enjoying so Far?</h1>
-                  <p>
-                    Purchase Gogo to get a fresh start with your new project.
-                  </p>
-                </div>
-                <div className="col-12 offset-0 col-lg-6 offset-lg-3 newsletter-input-container">
-                  <div className="text-center mb-3">
-                    <a
-                      className="btn btn-secondary btn-xl"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={buyUrl}
-                    >
-                      BUY NOW
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
