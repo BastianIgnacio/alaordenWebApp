@@ -1,5 +1,7 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
-import { auth } from '../../helpers/Firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
+import { auth, database } from '../../helpers/Firebase';
 import {
   LOGIN_USER,
   REGISTER_USER,
@@ -19,8 +21,13 @@ import {
   resetPasswordError,
 } from './actions';
 
-import { adminRoot, currentUser } from '../../constants/defaultValues';
-import { setCurrentUser } from '../../helpers/Utils';
+import {
+  adminRoot,
+  currentUser,
+  userLoginUrl,
+  errorUrl,
+} from '../../constants/defaultValues';
+import { setCurrentUser, setCurrentLocalComercial } from '../../helpers/Utils';
 
 export function* watchLoginUser() {
   // eslint-disable-next-line no-use-before-define
@@ -29,26 +36,46 @@ export function* watchLoginUser() {
 
 const loginWithEmailPasswordAsync = async (email, password) =>
   // eslint-disable-next-line no-return-await
-  await auth
-    .signInWithEmailAndPassword(email, password)
+  await signInWithEmailAndPassword(auth, email, password)
     .then((user) => user)
-    .catch((error) => error);
+    .catch((error) => {
+      console.log(error);
+    });
 
 function* loginWithEmailPassword({ payload }) {
   const { email, password } = payload.user;
   const { history } = payload;
   try {
     const loginUser = yield call(loginWithEmailPasswordAsync, email, password);
-    if (!loginUser.message) {
+    if (loginUser) {
       const item = { uid: loginUser.user.uid, ...currentUser };
       setCurrentUser(item);
+      const q = query(
+        collection(database, 'localesComerciales'),
+        where('refUsuario', '==', item.uid)
+      );
+      // eslint-disable-next-line no-unused-vars
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const localComercial = [];
+        querySnapshot.forEach((doc) => {
+          const cat = {
+            id: doc.id,
+            data: doc.data(),
+          };
+          localComercial.push(cat);
+        });
+        // Aca debemos hacerle un set
+        setCurrentLocalComercial(localComercial[0]);
+      });
+      // console.log(localComercial);
       yield put(loginUserSuccess(item));
-      history.push(adminRoot);
+      history.push(userLoginUrl);
     } else {
-      yield put(loginUserError(loginUser.message));
+      yield put(loginUserError('Contraseña incorrecta'));
     }
   } catch (error) {
     yield put(loginUserError(error));
+    history.push(errorUrl);
   }
 }
 

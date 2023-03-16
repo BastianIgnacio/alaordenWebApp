@@ -173,3 +173,35 @@ export const setCurrentUser = (user) => {
     console.log('>>>>: src/helpers/Utils.js : setCurrentUser -> error', error);
   }
 };
+
+export const getCurrentLocalComercial = () => {
+  let user = null;
+  try {
+    user =
+      localStorage.getItem('current_localComercial') != null
+        ? JSON.parse(localStorage.getItem('current_localComercial'))
+        : null;
+  } catch (error) {
+    console.log(
+      '>>>>: src/helpers/Utils.js  : getCurrentLocalComercial -> error',
+      error
+    );
+    user = null;
+  }
+  return user;
+};
+
+export const setCurrentLocalComercial = (user) => {
+  try {
+    if (user) {
+      localStorage.setItem('current_localComercial', JSON.stringify(user));
+    } else {
+      localStorage.removeItem('current_localComercial');
+    }
+  } catch (error) {
+    console.log(
+      '>>>>: src/helpers/Utils.js : setCurrentLocalComercial -> error',
+      error
+    );
+  }
+};

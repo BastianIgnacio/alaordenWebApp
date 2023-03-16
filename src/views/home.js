@@ -8,7 +8,7 @@ import classnames from 'classnames';
 import { scroller } from 'react-scroll';
 import Headroom from 'react-headroom';
 import GlideComponent from '../components/carousel/GlideComponent';
-import { buyUrl, adminRoot } from '../constants/defaultValues';
+import { loginUrl, buyUrl, adminRoot } from '../constants/defaultValues';
 
 const slideSettings = {
   type: 'carousel',
@@ -288,7 +288,7 @@ const Home = () => {
               className="btn btn-outline-primary btn-sm mobile-menu-cta"
               target="_blank"
               rel="noopener noreferrer"
-              href={buyUrl}
+              href={loginUrl}
             >
               ACCESO CLIENTES
             </a>
@@ -351,7 +351,7 @@ const Home = () => {
                     className="btn btn-outline-semi-light btn-sm pr-4"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={buyUrl}
+                    href={loginUrl}
                   >
                     ACCESO CLIENTES
                   </a>

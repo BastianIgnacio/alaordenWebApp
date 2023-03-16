@@ -4,21 +4,21 @@ import IntlMessages from '../../../helpers/IntlMessages';
 import { Colxx, Separator } from '../../../components/common/CustomBootstrap';
 import Breadcrumb from '../../../containers/navs/Breadcrumb';
 
-const Start = ({ match }) => (
+const Estadisticas = ({ match }) => (
   <>
     <Row>
       <Colxx xxs="12">
-        <Breadcrumb heading="menu.start" match={match} />
+        <Breadcrumb heading="menu.configuracionMediosPago" match={match} />
         <Separator className="mb-5" />
       </Colxx>
     </Row>
     <Row>
       <Colxx xxs="12" className="mb-4">
         <p>
-          <IntlMessages id="menu.start" />
+          <IntlMessages id="menu.ventas" />
         </p>
       </Colxx>
     </Row>
   </>
 );
-export default Start;
+export default Estadisticas;

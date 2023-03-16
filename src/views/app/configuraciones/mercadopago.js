@@ -8,14 +8,14 @@ const Second = ({ match }) => (
   <>
     <Row>
       <Colxx xxs="12">
-        <Breadcrumb heading="menu.second" match={match} />
+        <Breadcrumb heading="menu.configuracionMercadopago" match={match} />
         <Separator className="mb-5" />
       </Colxx>
     </Row>
     <Row>
       <Colxx xxs="12" className="mb-4">
         <p>
-          <IntlMessages id="menu.second" />
+          <IntlMessages id="menu.ventas" />
         </p>
       </Colxx>
     </Row>

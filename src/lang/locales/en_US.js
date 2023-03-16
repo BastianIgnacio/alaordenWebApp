@@ -31,7 +31,7 @@ module.exports = {
   'user.username': 'Username',
 
   /* 03.Menu */
-  'menu.home': 'Home',
+  'menu.home': 'A la orden',
   'menu.app': 'Home',
   'menu.dashboards': 'Dashboards',
   'menu.gogo': 'Gogo',
@@ -46,7 +46,6 @@ module.exports = {
   'menu.search': 'Search',
   'menu.docs': 'Docs',
   'menu.blank-page': 'Blank Page',
-
   /* 04.Error Page */
   'pages.error-title': 'Ooops... looks like an error occurred!',
   'pages.error-code': 'Error code',
